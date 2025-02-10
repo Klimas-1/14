@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynka</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zostaniesz moją Walentynką?</h1>
+    <button onclick="sendResponse('Tak')">Tak</button>
+    <button onclick="sendResponse('Nie')">Nie</button>
+    
+    <script>
+        function sendResponse(answer) {
+            const email = "twoj@email.com"; // Zmień na swój adres e-mail
+            const subject = "Odpowiedź Walentynkowa";
+            const body = `Osoba odpowiedziała: ${answer}`;
+            
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+</html>
